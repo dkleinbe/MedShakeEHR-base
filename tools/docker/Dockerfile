@@ -75,7 +75,7 @@ FROM composer:${COMPOSER_VERSION} AS composer-stage
 FROM final-stage
 
 COPY --from=composer-stage /usr/bin/composer /usr/local/bin/composer
-COPY config/vhost-docker /etc/apache2/sites-available/000-default.conf
+COPY tools/docker/config/vhost-docker /etc/apache2/sites-available/000-default.conf
 
 ARG VRELEASE=master
 RUN curl -fsSL -o /tmp/msehr.tar.gz https://github.com/dkleinbe/MedShakeEHR-base/archive/"$VRELEASE".tar.gz && \
