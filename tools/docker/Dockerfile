@@ -67,7 +67,7 @@ RUN set -ex; \
     useradd -u 1000 -u 1000 -s /bin/bash medshakeehr
 
 
-COPY config/30-custom-php.ini "$PHP_INI_DIR/conf.d"
+COPY tools/docker/config/30-custom-php.ini "$PHP_INI_DIR/conf.d"
 
 # Workaround for composer ARG in bake
 FROM composer:${COMPOSER_VERSION} AS composer-stage 
